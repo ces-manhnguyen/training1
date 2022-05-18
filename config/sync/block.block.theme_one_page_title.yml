@@ -1,0 +1,26 @@
+uuid: 0693d7ce-1845-4eb4-bda6-1901c5c0a016
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - theme_one
+_core:
+  default_config_hash: 7rR9chwXvdM2H8OYMAYx9Zj3GGlPMrZp_M3ZA4thYTk
+id: theme_one_page_title
+theme: theme_one
+region: content
+weight: -8
+provider: null
+plugin: page_title_block
+settings:
+  id: page_title_block
+  label: 'Page title'
+  provider: core
+  label_display: '0'
+visibility:
+  request_path:
+    id: request_path
+    pages: '<front>'
+    negate: true

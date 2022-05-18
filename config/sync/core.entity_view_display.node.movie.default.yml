@@ -1,0 +1,282 @@
+uuid: 8310767d-87e1-4eed-ba2a-2b0f7df8ee18
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.movie.body
+    - field.field.node.movie.field_cast
+    - field.field.node.movie.field_link_to_imdb_netflix_amazo
+    - field.field.node.movie.field_movie_image
+    - field.field.node.movie.field_movie_rating
+    - field.field.node.movie.field_review_genre
+    - field.field.node.movie.field_tags
+    - field.field.node.movie.field_trailers
+    - field.field.node.movie.layout_builder__layout
+    - node.type.movie
+    - views.view.movie_carousel
+    - views.view.movie_tags
+  module:
+    - fivestar
+    - layout_builder
+    - layout_discovery
+    - link
+    - text
+    - user
+    - views
+third_party_settings:
+  layout_builder:
+    allow_custom: true
+    enabled: true
+    sections:
+      -
+        layout_id: layout_onecol
+        layout_settings:
+          label: ''
+        components:
+          00d77853-9455-4553-962b-d32528ee1f3a:
+            uuid: 00d77853-9455-4553-962b-d32528ee1f3a
+            region: content
+            configuration:
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              id: 'extra_field_block:node:movie:links'
+            additional: {  }
+            weight: 0
+          8a76c812-7347-4588-b76c-8fc4555dbd3c:
+            uuid: 8a76c812-7347-4588-b76c-8fc4555dbd3c
+            region: content
+            configuration:
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              id: 'field_block:node:movie:body'
+              formatter:
+                label: hidden
+                type: text_default
+                settings: {  }
+                third_party_settings: {  }
+            additional: {  }
+            weight: 2
+          b615e086-93f2-4f52-989f-0e1f343a64f5:
+            uuid: b615e086-93f2-4f52-989f-0e1f343a64f5
+            region: content
+            configuration:
+              id: 'field_block:node:movie:field_link_to_imdb_netflix_amazo'
+              label: 'Link to IMDB, Netflix, Amazon Prime etc.'
+              provider: layout_builder
+              label_display: visible
+              formatter:
+                label: hidden
+                type: link
+                settings:
+                  trim_length: 80
+                  url_only: false
+                  url_plain: false
+                  rel: '0'
+                  target: '0'
+                third_party_settings: {  }
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+            additional: {  }
+            weight: 7
+          bc23add2-4fb3-4faa-96b5-77f4a8bd6157:
+            uuid: bc23add2-4fb3-4faa-96b5-77f4a8bd6157
+            region: content
+            configuration:
+              id: 'field_block:node:movie:field_trailers'
+              label: Trailers
+              provider: layout_builder
+              label_display: visible
+              formatter:
+                label: hidden
+                type: entity_reference_entity_view
+                settings:
+                  view_mode: default
+                third_party_settings: {  }
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+            additional: {  }
+            weight: 8
+          7e3add48-3919-40b8-88b0-71f3f6515d34:
+            uuid: 7e3add48-3919-40b8-88b0-71f3f6515d34
+            region: content
+            configuration:
+              id: 'views_block:movie_tags-block_2'
+              label: ''
+              provider: views
+              label_display: visible
+              views_label: ''
+              items_per_page: none
+              context_mapping: {  }
+            additional: {  }
+            weight: 4
+          3b384932-2cef-4d90-9eea-0b9e696d46b2:
+            uuid: 3b384932-2cef-4d90-9eea-0b9e696d46b2
+            region: content
+            configuration:
+              id: 'views_block:movie_tags-block_1'
+              label: ''
+              provider: views
+              label_display: visible
+              views_label: ''
+              items_per_page: '40'
+              context_mapping: {  }
+            additional: {  }
+            weight: 9
+          e3f6017f-4614-4d58-8d5e-854cd2f286e6:
+            uuid: e3f6017f-4614-4d58-8d5e-854cd2f286e6
+            region: content
+            configuration:
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              id: 'field_block:node:movie:field_movie_image'
+              formatter:
+                type: entity_reference_entity_view
+                label: hidden
+                settings:
+                  view_mode: default
+                  link: false
+                third_party_settings: {  }
+            additional: {  }
+            weight: 1
+          55acefee-e2c9-4bfa-af4f-a4e7f5599d8c:
+            uuid: 55acefee-e2c9-4bfa-af4f-a4e7f5599d8c
+            region: content
+            configuration:
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              id: 'field_block:node:movie:field_movie_rating'
+              formatter:
+                label: above
+                settings:
+                  text_format: average
+                  display_format: average
+                  fivestar_widget: basic
+                third_party_settings: {  }
+                type: fivestar_stars
+            additional: {  }
+            weight: 3
+          5e3d3af8-120c-4a1b-a3c2-aaa7df5d5396:
+            uuid: 5e3d3af8-120c-4a1b-a3c2-aaa7df5d5396
+            region: content
+            configuration:
+              id: 'views_block:movie_carousel-block_1'
+              label: 'Similar Movies'
+              provider: views
+              label_display: visible
+              views_label: 'Similar Movies'
+              items_per_page: none
+              context_mapping: {  }
+            additional: {  }
+            weight: 10
+          1884f298-185d-431f-8aef-ea94c58852a1:
+            uuid: 1884f298-185d-431f-8aef-ea94c58852a1
+            region: content
+            configuration:
+              id: 'field_block:node:movie:field_cast'
+              label: Cast
+              provider: layout_builder
+              label_display: visible
+              formatter:
+                label: hidden
+                type: entity_reference_revisions_entity_view
+                settings:
+                  view_mode: default
+                third_party_settings: {  }
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+            additional: {  }
+            weight: 6
+        third_party_settings: {  }
+id: node.movie.default
+targetEntityType: node
+bundle: movie
+mode: default
+content:
+  body:
+    label: hidden
+    type: text_default
+    weight: 1
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  field_cast_paragraph:
+    weight: 8
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_link_to_imdb_netflix_amazo:
+    weight: 4
+    label: above
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    type: link
+    region: content
+  field_movie_image:
+    type: entity_reference_entity_view
+    weight: 2
+    label: hidden
+    settings:
+      view_mode: default
+      link: false
+    third_party_settings: {  }
+    region: content
+  field_movie_rating:
+    weight: 5
+    label: above
+    settings:
+      text_format: average
+      display_format: average
+      fivestar_widget: basic
+    third_party_settings: {  }
+    type: fivestar_stars
+    region: content
+  field_review_genre:
+    weight: 3
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_tags:
+    weight: 7
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_trailers:
+    type: entity_reference_entity_view
+    weight: 6
+    label: above
+    settings:
+      view_mode: default
+      link: false
+    third_party_settings: {  }
+    region: content
+  links:
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  field_cast: true
+  langcode: true
+  layout_builder__layout: true
+  search_api_excerpt: true

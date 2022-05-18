@@ -815,3 +815,16 @@ $databases['default']['default'] = array (
   'driver' => 'mysql',
 );
 $settings['config_sync_directory'] = '../config/sync';
+
+$env= 'dev';
+switch ($env) {
+  case 'dev': 
+    $config['config_split.config_split.dev_split']['status'] = TRUE;
+    $config['config_split.config_split.prod_split']['status'] = FALSE;
+    break;
+  case 'prod':
+    $config['config_split.config_split.dev_split']['status'] = FALSE;
+    $config['config_split.config_split.prod_split']['status'] = TRUE;
+    break;
+}
+  

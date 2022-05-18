@@ -1,0 +1,19 @@
+name: Theme One
+type: theme
+description: 'A new custom theme'
+
+#core: 9.x
+core_version_requirement: ^8 || ^9
+base theme: bootstrap_barrio
+
+libraries:
+  - theme_one/bootstrap_cdn
+  - theme_one/global-styling
+libraries-override:
+  bootstrap_barrio/global-styling: false
+regions:
+  header: Header
+  hero_section: 'Hero section'
+  content: Content
+  sidebar: Sidebar
+  footer: Footer

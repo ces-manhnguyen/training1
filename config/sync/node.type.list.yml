@@ -1,0 +1,17 @@
+uuid: 82cac68b-f6d0-4a19-aee2-e0a8746e8c14
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus: {  }
+    parent: ''
+name: List
+type: list
+description: 'A content type, which will be used to create Lists of different type of views.'
+help: ''
+new_revision: true
+preview_mode: 1
+display_submitted: false

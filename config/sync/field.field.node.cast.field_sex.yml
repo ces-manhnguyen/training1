@@ -1,0 +1,23 @@
+uuid: d9fd3c78-8d6f-49e3-b16f-3c2b3de5afc7
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_sex
+    - node.type.cast
+id: node.cast.field_sex
+field_name: field_sex
+entity_type: node
+bundle: cast
+label: Sex
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 1
+default_value_callback: ''
+settings:
+  on_label: Male
+  off_label: Female
+field_type: boolean

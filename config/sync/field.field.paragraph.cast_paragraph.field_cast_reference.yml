@@ -1,0 +1,29 @@
+uuid: 19d91fda-f9a5-4724-8051-4944bed6d8ef
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_cast_reference
+    - node.type.cast
+    - paragraphs.paragraphs_type.cast_paragraph
+id: paragraph.cast_paragraph.field_cast_reference
+field_name: field_cast_reference
+entity_type: paragraph
+bundle: cast_paragraph
+label: 'Cast Reference'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      cast: cast
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

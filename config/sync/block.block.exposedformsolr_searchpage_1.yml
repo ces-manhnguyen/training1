@@ -1,0 +1,28 @@
+uuid: 766a9fa1-2c94-4943-89fe-18f3aab0c34c
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.solr_search
+  module:
+    - system
+    - views
+  theme:
+    - theme_one
+id: exposedformsolr_searchpage_1
+theme: theme_one
+region: sidebar
+weight: -8
+provider: null
+plugin: 'views_exposed_filter_block:solr_search-page_1'
+settings:
+  id: 'views_exposed_filter_block:solr_search-page_1'
+  label: ''
+  provider: views
+  label_display: visible
+  views_label: ''
+visibility:
+  request_path:
+    id: request_path
+    pages: /solr-search
+    negate: true

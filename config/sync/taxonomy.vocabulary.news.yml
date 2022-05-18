@@ -1,0 +1,8 @@
+uuid: 9be3e461-b1b5-495c-93c5-0e4bdc1d44bb
+langcode: en
+status: true
+dependencies: {  }
+name: News
+vid: news
+description: 'A News category to categorize news contents.'
+weight: 0

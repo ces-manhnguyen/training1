@@ -1,0 +1,31 @@
+uuid: 61b9afa4-7b03-4178-b4da-9352d6d56659
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_cast
+    - node.type.movie
+    - paragraphs.paragraphs_type.cast_paragraph
+  module:
+    - entity_reference_revisions
+id: node.movie.field_cast
+field_name: field_cast
+entity_type: node
+bundle: movie
+label: Cast
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    negate: 0
+    target_bundles:
+      cast_paragraph: cast_paragraph
+    target_bundles_drag_drop:
+      cast_paragraph:
+        enabled: true
+        weight: 2
+field_type: entity_reference_revisions

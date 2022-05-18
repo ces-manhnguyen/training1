@@ -1,0 +1,25 @@
+uuid: 44440dd1-3b64-4e09-95b0-15666d2fbbaf
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.cast_paragraph.field_cast_reference
+    - paragraphs.paragraphs_type.cast_paragraph
+id: paragraph.cast_paragraph.default
+targetEntityType: paragraph
+bundle: cast_paragraph
+mode: default
+content:
+  field_cast_reference:
+    weight: 0
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
+    region: content
+hidden:
+  created: true
+  status: true

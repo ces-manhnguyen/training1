@@ -1,0 +1,29 @@
+uuid: 97c0e11d-7460-4a57-be4f-f64d86565093
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_person_s_image
+    - media.type.image
+    - node.type.cast
+id: node.cast.field_person_s_image
+field_name: field_person_s_image
+entity_type: node
+bundle: cast
+label: 'Person''s Image'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:media'
+  handler_settings:
+    target_bundles:
+      image: image
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

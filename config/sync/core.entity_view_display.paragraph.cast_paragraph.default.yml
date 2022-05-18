@@ -1,0 +1,23 @@
+uuid: f675610b-f299-4703-bc17-716ac77a1cea
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.cast_paragraph.field_cast_reference
+    - paragraphs.paragraphs_type.cast_paragraph
+id: paragraph.cast_paragraph.default
+targetEntityType: paragraph
+bundle: cast_paragraph
+mode: default
+content:
+  field_cast_reference:
+    weight: 0
+    label: hidden
+    settings:
+      view_mode: teaser
+      link: false
+    third_party_settings: {  }
+    type: entity_reference_entity_view
+    region: content
+hidden:
+  search_api_excerpt: true

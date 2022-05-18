@@ -1,0 +1,30 @@
+uuid: 848c2235-d771-4ebb-a404-d7b4fcf6d29d
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:27d89e91-ea83-444b-a40f-32bb127909b1'
+  module:
+    - block_content
+    - system
+  theme:
+    - theme_one
+id: welcomeblock
+theme: theme_one
+region: hero_section
+weight: -9
+provider: null
+plugin: 'block_content:27d89e91-ea83-444b-a40f-32bb127909b1'
+settings:
+  id: 'block_content:27d89e91-ea83-444b-a40f-32bb127909b1'
+  label: 'Welcome Block'
+  provider: block_content
+  label_display: '0'
+  status: true
+  info: ''
+  view_mode: full
+visibility:
+  request_path:
+    id: request_path
+    pages: '<front>'
+    negate: false

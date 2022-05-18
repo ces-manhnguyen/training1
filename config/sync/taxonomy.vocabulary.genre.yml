@@ -1,0 +1,8 @@
+uuid: 35a5b621-2346-4e3e-af38-1753db43fbe0
+langcode: en
+status: true
+dependencies: {  }
+name: Genre
+vid: genre
+description: 'A <em>Genre</em> category to categorize the <em>Movie</em> and <em>Movie Review</em> contents.'
+weight: 0

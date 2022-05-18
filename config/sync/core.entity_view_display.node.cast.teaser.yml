@@ -1,0 +1,156 @@
+uuid: d58abb57-77c0-4a5e-803d-8ba6fb7e93cb
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.cast.body
+    - field.field.node.cast.field_age
+    - field.field.node.cast.field_person_s_image
+    - field.field.node.cast.field_sex
+    - image.style.thumbnail_100x100
+    - node.type.cast
+  module:
+    - layout_builder
+    - layout_discovery
+    - media
+    - text
+    - user
+third_party_settings:
+  layout_builder:
+    allow_custom: false
+    enabled: true
+    sections:
+      -
+        layout_id: layout_twocol_section
+        layout_settings:
+          label: ''
+          column_widths: 25-75
+          context_mapping: {  }
+        components:
+          d8e8de01-476e-412b-9153-9c748abb2f91:
+            uuid: d8e8de01-476e-412b-9153-9c748abb2f91
+            region: second
+            configuration:
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              id: 'field_block:node:cast:field_sex'
+              formatter:
+                type: boolean
+                label: inline
+                settings:
+                  format: default
+                  format_custom_false: ''
+                  format_custom_true: ''
+                third_party_settings: {  }
+            additional: {  }
+            weight: 3
+          6035a306-71f5-4c2a-8157-3dc14967217d:
+            uuid: 6035a306-71f5-4c2a-8157-3dc14967217d
+            region: second
+            configuration:
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              id: 'field_block:node:cast:body'
+              formatter:
+                label: above
+                type: text_trimmed
+                settings:
+                  trim_length: 200
+                third_party_settings: {  }
+            additional: {  }
+            weight: 4
+          f95d9117-3ce9-48da-8136-10143d5e54ab:
+            uuid: f95d9117-3ce9-48da-8136-10143d5e54ab
+            region: second
+            configuration:
+              id: 'field_block:node:cast:field_age'
+              label: Age
+              provider: layout_builder
+              label_display: '0'
+              formatter:
+                label: inline
+                type: number_integer
+                settings:
+                  thousand_separator: ''
+                  prefix_suffix: false
+                third_party_settings: {  }
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+            additional: {  }
+            weight: 2
+          c578f4dd-18a0-4ad6-b032-3db7be4e44eb:
+            uuid: c578f4dd-18a0-4ad6-b032-3db7be4e44eb
+            region: first
+            configuration:
+              id: 'field_block:node:cast:field_person_s_image'
+              label: 'Person''s Image'
+              provider: layout_builder
+              label_display: '0'
+              formatter:
+                label: hidden
+                type: media_thumbnail
+                settings:
+                  image_style: portrait_100x130
+                  image_link: ''
+                third_party_settings: {  }
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+            additional: {  }
+            weight: 0
+        third_party_settings: {  }
+      -
+        layout_id: layout_onecol
+        layout_settings:
+          label: ''
+        components: {  }
+        third_party_settings: {  }
+id: node.cast.teaser
+targetEntityType: node
+bundle: cast
+mode: teaser
+content:
+  body:
+    label: above
+    type: text_trimmed
+    weight: 3
+    settings:
+      trim_length: 200
+    third_party_settings: {  }
+    region: content
+  field_age:
+    type: number_integer
+    weight: 1
+    region: content
+    label: inline
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+  field_person_s_image:
+    type: media_thumbnail
+    weight: 0
+    region: content
+    label: hidden
+    settings:
+      image_style: thumbnail_100x100
+      image_link: ''
+    third_party_settings: {  }
+  field_sex:
+    type: boolean
+    weight: 2
+    region: content
+    label: inline
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+hidden:
+  langcode: true
+  links: true
+  search_api_excerpt: true

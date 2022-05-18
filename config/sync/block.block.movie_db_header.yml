@@ -1,0 +1,33 @@
+uuid: f99a84b0-9547-4868-b858-4cbd96ce6f26
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.header
+  module:
+    - system
+    - user
+  theme:
+    - movie_db
+id: movie_db_header
+theme: movie_db
+region: top_header
+weight: -9
+provider: null
+plugin: 'system_menu_block:header'
+settings:
+  id: 'system_menu_block:header'
+  label: Header
+  provider: system
+  label_display: '0'
+  level: 1
+  depth: 0
+  expand_all_items: false
+visibility:
+  user_role:
+    id: user_role
+    roles:
+      authenticated: authenticated
+    negate: false
+    context_mapping:
+      user: '@user.current_user_context:current_user'

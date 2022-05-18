@@ -1,0 +1,65 @@
+uuid: c24ba62e-c5df-4bd5-952a-b15d1dbe401c
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.movie_review
+  module:
+    - content_moderation
+id: review_workflow
+label: 'Review Workflow'
+type: content_moderation
+type_settings:
+  states:
+    archive:
+      published: false
+      default_revision: false
+      label: Archived
+      weight: 1
+    draft:
+      label: Draft
+      published: false
+      default_revision: false
+      weight: -2
+    in_review:
+      published: false
+      default_revision: false
+      label: 'In Review'
+      weight: -1
+    published:
+      label: Published
+      published: true
+      default_revision: true
+      weight: 0
+  transitions:
+    create_new_draft:
+      label: 'Create New Draft'
+      to: draft
+      weight: -2
+      from:
+        - draft
+        - published
+    draft_to_review:
+      label: 'Draft to Review'
+      from:
+        - draft
+        - in_review
+      to: in_review
+      weight: -1
+    publish:
+      label: Publish
+      to: published
+      weight: 0
+      from:
+        - in_review
+        - published
+    published_to_archived:
+      label: 'Published to Archived'
+      from:
+        - published
+      to: archive
+      weight: 1
+  entity_types:
+    node:
+      - movie_review
+  default_moderation_state: draft

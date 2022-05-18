@@ -1,0 +1,61 @@
+uuid: 8d43b351-c25e-4f06-8d93-14a2e5c750c0
+langcode: en
+status: true
+dependencies: {  }
+id: latest_news
+label: 'Latest News'
+renderer: quick_tabs
+options:
+  quick_tabs:
+    class: ''
+    style: tabsbar
+    ajax: false
+hide_empty_tabs: false
+default_tab: 0
+configuration_data:
+  -
+    title: 'Movie News'
+    weight: 0
+    type: view_content
+    content:
+      block_content:
+        options:
+          bid: 'entity_view:node'
+          block_title: ''
+          display_title: false
+      view_content:
+        options:
+          vid: latest_news
+          display: block_1
+          args: ''
+      node_content:
+        options:
+          nid: ''
+          view_mode: full
+          hide_title: true
+      qtabs_content:
+        options:
+          machine_name: ''
+  -
+    title: 'Celeb News'
+    weight: 0
+    type: view_content
+    content:
+      block_content:
+        options:
+          bid: 'entity_view:node'
+          block_title: ''
+          display_title: false
+      view_content:
+        options:
+          vid: latest_news
+          display: block_2
+          args: ''
+      node_content:
+        options:
+          nid: ''
+          view_mode: full
+          hide_title: true
+      qtabs_content:
+        options:
+          machine_name: ''

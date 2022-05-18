@@ -1,0 +1,18 @@
+uuid: 5cce22f2-36ae-4e0f-8910-72da42fb2973
+langcode: en
+status: true
+dependencies: {  }
+id: review_notification
+workflow: review_workflow
+transitions:
+  publish: publish
+roles:
+  administrator: administrator
+author: true
+site_mail: false
+emails: ''
+subject: 'Your review has been changed'
+body:
+  value: "<h2><strong>Notification about a change in your review content</strong></h2>\r\n\r\n<p><em>Your review \"[node:title]\" has been changed at [current-date:short] by [current-user:display-name].</em></p>\r\n\r\n<p><em>You can view and edit this content <a href=\"https://[node:url:brief]\">here</a>.</em></p>\r\n\r\n<p><em>You received this email because you are listed as the author for this piece of content.</em></p>\r\n"
+  format: basic_html
+label: 'Review Notification'

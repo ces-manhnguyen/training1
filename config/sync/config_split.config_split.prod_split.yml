@@ -1,0 +1,15 @@
+uuid: 380f82c7-2486-45d8-92a7-742c4e94cb41
+langcode: en
+status: true
+dependencies: {  }
+id: prod_split
+label: 'Prod Split'
+description: ''
+weight: 0
+stackable: false
+storage: folder
+folder: ../config/prod_split
+module: {  }
+theme: {  }
+complete_list: {  }
+partial_list: {  }

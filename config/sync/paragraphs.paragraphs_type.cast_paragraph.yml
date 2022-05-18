@@ -1,0 +1,10 @@
+uuid: 5af57ac7-945e-4f38-9c04-62a33e6b6f96
+langcode: en
+status: true
+dependencies: {  }
+id: cast_paragraph
+label: 'Cast Paragraph'
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins: {  }

@@ -1,0 +1,91 @@
+#page {
+  background-color: white;
+}
+#header {
+  background-color: #212429;
+}
+#main {
+  margin-top: 20px;
+}
+.navbar-brand {
+  color: white;
+}
+.navbar-nav {
+  flex-direction: row;
+}
+.navbar-nav .nav-item {
+  margin-right: 15px;
+}
+.hero-region .content{
+  background-color: #f8f9fa ;
+  border-bottom: 2px solid lightgray;
+  padding-top: 50px;
+  padding-bottom: 50px;
+  text-align: center;
+}
+.region-hero-section {
+  --bs-gutter-x: 0px;
+}
+.header-region {
+  margin-left: 20px;
+  margin-right: 20px;
+}
+.region-sidebar {
+  margin-left: 4px;
+}
+.sidebar .block {
+  border: 1px solid lightgray;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+.sidebar .block .form-item-type, .sidebar .block .form-item-field-review-genre{
+  display: none;
+}
+.region-footer a {
+  color: white;
+}
+.menu--main li a {
+  color: white;
+}
+.node__content .block-views {
+  margin-bottom: 30px;
+}
+.movie-row {
+  margin-top: 10px;
+  margin-bottom: 5px;
+}
+.movie-row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+.movie-image {
+  float: left;
+  margin-right: 10px;
+}
+.movie-links {
+  margin-bottom: 20px;
+}
+.movie-slider {
+  width: 60%;
+  margin: auto;
+}
+.site-footer {
+  padding: 20px 0px 40px;
+  background-color: black;
+}
+#block-theme-one-powered {
+  color: white;
+}
+.quicktabs-tabs {
+  flex-direction: row;
+  border-radius: 0px;
+}
+.item-list {
+  padding-right: 10px;
+}
+.views-exposed-form .form-row {
+    display: flex;
+}

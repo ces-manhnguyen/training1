@@ -1,0 +1,33 @@
+uuid: a140329c-e47a-4c34-9123-c161d2fe54c1
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.header
+  module:
+    - system
+    - user
+  theme:
+    - theme_one
+id: theme_one_header
+theme: theme_one
+region: header
+weight: -8
+provider: null
+plugin: 'system_menu_block:header'
+settings:
+  id: 'system_menu_block:header'
+  label: Header
+  provider: system
+  label_display: '0'
+  level: 1
+  depth: 0
+  expand_all_items: false
+visibility:
+  user_role:
+    id: user_role
+    roles:
+      authenticated: authenticated
+    negate: false
+    context_mapping:
+      user: '@user.current_user_context:current_user'

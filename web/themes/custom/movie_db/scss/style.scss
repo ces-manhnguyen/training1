@@ -1,0 +1,170 @@
+/* 
+Theme Name: Bootstrap 4 Sass
+Description: Bootstrap 4 with Sass
+*/
+
+// import files
+@import "import";
+
+/* GENERAL STYLES
+-------------------------------------------------*/
+
+body {
+    background: $dark-black;
+}
+
+
+/* COLORS 
+--------------------------------------------------*/
+
+a {
+    color: $accent-shade;
+}
+
+.bg-inverse {
+    background: $primary-shade !important;
+}
+
+.site-footer {
+    background: $accent-shade !important;
+}
+
+.menu--main li a {
+    color: $primary-shade;
+}
+
+.menu--account li a {
+    color: $primary-shade;
+}
+
+.site-name-slogan a {
+    text-decoration: none;
+}
+
+.card-group img {
+    margin: 0;
+    width: 100%;
+    height: auto;
+}
+
+.card-group .field--type-image {
+    margin: 0
+}
+
+.slick {
+    width: 100%;
+}
+
+.slick>div {
+    margin: 0 15px;
+}
+
+.region-footer-fifth {
+    a {
+        color: rgba(255, 255, 255, 0.55);
+    }
+}
+
+.navbar-nav {
+    flex-direction: row;
+
+    .nav-item {
+        margin-right: 15px;
+    }
+}
+
+.sidebar {
+    .block {
+        border: 1px solid lightgray;
+        border-radius: 5px;
+        background-color: white;
+    }
+}
+
+.main-content {
+    border: 1px solid lightgray;
+    border-radius: 5px;
+    background-color: white;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.navbar-brand {
+    display: flex;
+    align-items: center;
+
+    img {
+        margin-right: 10px;
+    }
+}
+
+#navbar-main {
+    margin-bottom: 10px;
+}
+
+.site-footer {
+    margin-top: 10px;
+}
+
+.quicktabs-tabs {
+    flex-direction: row;
+    border-radius: 0px;
+}
+
+.item-list {
+    padding-right: 10px;
+}
+
+.list-group-item {
+    &.active {
+        background-color: #1d79c0;
+        border-color: #1d79c0;
+    }
+
+    &:first-child {
+        border-top-left-radius: 10px;
+    }
+
+    &:last-child {
+        border-top-right-radius: 10px;
+    }
+}
+
+.bg-secondary {
+    background-color: black !important;
+}
+
+.movie-row {
+    margin-top: 10px;
+    margin-bottom: 5px;
+
+    &::after {
+        content: "";
+        clear: both;
+        display: table;
+    }
+}
+
+.movie-image {
+    float: left;
+    margin-right: 10px;
+}
+
+.movie-links {
+    margin-bottom: 20px;
+}
+
+// .movie-slider {
+//     width: 60%;
+//     margin: auto;
+// }
+
+.views-exposed-form {
+    .form-row {
+        display: flex;
+    }
+}
+// .path-frontpage .main-content {
+//     background-color: black;
+//     border-color: black;
+// }

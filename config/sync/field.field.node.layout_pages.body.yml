@@ -1,0 +1,23 @@
+uuid: cbac8c19-7ac9-433d-97d6-3863a5d8f97b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.body
+    - node.type.layout_pages
+  module:
+    - text
+id: node.layout_pages.body
+field_name: body
+entity_type: node
+bundle: layout_pages
+label: Body
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  display_summary: true
+  required_summary: false
+field_type: text_with_summary

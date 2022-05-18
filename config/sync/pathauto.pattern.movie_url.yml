@@ -1,0 +1,22 @@
+uuid: 231a028a-e762-48f2-afde-5e841120f1b9
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: movie_url
+label: 'Movie URL'
+type: 'canonical_entities:node'
+pattern: 'movie/[node:title]'
+selection_criteria:
+  6f96b995-df93-4c66-b812-144cfe6b61db:
+    id: node_type
+    bundles:
+      movie: movie
+    negate: false
+    context_mapping:
+      node: node
+    uuid: 6f96b995-df93-4c66-b812-144cfe6b61db
+selection_logic: and
+weight: -5
+relationships: {  }

@@ -1,0 +1,14 @@
+uuid: d45d4981-5ce2-461e-8110-b1306ab6350c
+langcode: en
+status: true
+dependencies:
+  config:
+    - user.role.critic
+  module:
+    - user
+id: user_add_role_action.critic
+label: 'Add the Critic role to the selected user(s)'
+type: user
+plugin: user_add_role_action
+configuration:
+  rid: critic

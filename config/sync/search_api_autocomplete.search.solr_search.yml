@@ -1,0 +1,55 @@
+uuid: 16877357-e727-4d57-8d95-f848c8d26d39
+langcode: en
+status: true
+dependencies:
+  config:
+    - search_api.index.local_index
+    - views.view.solr_search
+  module:
+    - views
+    - search_api_autocomplete
+    - search_api_solr
+id: solr_search
+label: 'Solr Search'
+index_id: local_index
+suggester_settings:
+  live_results:
+    fields: {  }
+    view_modes:
+      'entity:node':
+        article: ''
+        cast: ''
+        flexslider_example: ''
+        layout_pages: ''
+        list: ''
+        movie: ''
+        movie_review: ''
+        news: ''
+        page: ''
+      'entity:taxonomy_term':
+        genre: ''
+        news: ''
+        tags: ''
+      'entity:user':
+        user: ''
+    highlight:
+      enabled: false
+      field: ''
+  search_api_solr_terms:
+    fields: {  }
+suggester_weights:
+  live_results: 0
+  search_api_solr_terms: 0
+suggester_limits: {  }
+search_settings:
+  'views:solr_search':
+    displays:
+      default: true
+      selected: {  }
+options:
+  limit: 10
+  min_length: 1
+  show_count: false
+  autosubmit: true
+  submit_button_selector: ':submit'
+  delay: null

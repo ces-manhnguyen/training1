@@ -1,0 +1,22 @@
+uuid: 49336132-c905-458c-9f8c-6f8cc68dbbbc
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: cast_url
+label: 'Cast URL'
+type: 'canonical_entities:node'
+pattern: 'cast/[node:title]'
+selection_criteria:
+  53e9350f-7cf7-4d27-98c4-86bfc9d9fcf9:
+    id: node_type
+    bundles:
+      cast: cast
+    negate: false
+    context_mapping:
+      node: node
+    uuid: 53e9350f-7cf7-4d27-98c4-86bfc9d9fcf9
+selection_logic: and
+weight: -5
+relationships: {  }

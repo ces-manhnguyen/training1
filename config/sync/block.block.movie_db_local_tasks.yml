@@ -1,0 +1,22 @@
+uuid: bd756c77-dd9f-4c45-97bc-2201cfff83cd
+langcode: en
+status: true
+dependencies:
+  theme:
+    - movie_db
+_core:
+  default_config_hash: X9I1OB0W3WlWtrK-CNcg6hNWwa8wficanpH8pYnDZDE
+id: movie_db_local_tasks
+theme: movie_db
+region: content
+weight: -7
+provider: null
+plugin: local_tasks_block
+settings:
+  id: local_tasks_block
+  label: Tabs
+  provider: core
+  label_display: '0'
+  primary: true
+  secondary: true
+visibility: {  }

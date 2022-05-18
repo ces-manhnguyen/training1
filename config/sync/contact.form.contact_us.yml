@@ -1,0 +1,12 @@
+uuid: 8653929e-f2bc-411a-b7c4-156e066e883d
+langcode: en
+status: true
+dependencies: {  }
+id: contact_us
+label: 'Contact Us'
+recipients:
+  - admin@localhost.com
+reply: ''
+weight: 0
+message: 'Your message has been sent.'
+redirect: ''

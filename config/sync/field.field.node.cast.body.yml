@@ -1,0 +1,23 @@
+uuid: 4093da45-98de-48d5-a8bb-0a8d67d09cdf
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.body
+    - node.type.cast
+  module:
+    - text
+id: node.cast.body
+field_name: body
+entity_type: node
+bundle: cast
+label: Bio
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  display_summary: true
+  required_summary: false
+field_type: text_with_summary

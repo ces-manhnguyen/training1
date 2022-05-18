@@ -1,0 +1,14 @@
+name: MovieDB
+mail: admin@localhost.com
+simple_address: false
+sitestyle: true
+textonly: false
+linkonly: false
+user_plaintext_field: ''
+format: basic_html
+preserve_class: false
+advanced:
+  incoming: false
+  key: GRj5BKvWlFcwhh0Zx-MdyAi7pLhoy4s0Gp0xGPjCvB8
+_core:
+  default_config_hash: rpfRQVoEn2ZWd_lw-iULKPiuina5CqcmzXWlz1OjTwM

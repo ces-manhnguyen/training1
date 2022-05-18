@@ -1,0 +1,32 @@
+uuid: 67c10010-e9f2-4f48-949c-cb2c041c5852
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.recommended_movies
+  module:
+    - ctools
+    - views
+  theme:
+    - movie_db
+id: movie_db_views_block__recommended_movies_block_1
+theme: movie_db
+region: sidebar_first
+weight: -5
+provider: null
+plugin: 'views_block:recommended_movies-block_1'
+settings:
+  id: 'views_block:recommended_movies-block_1'
+  label: ''
+  provider: views
+  label_display: visible
+  views_label: ''
+  items_per_page: none
+visibility:
+  'entity_bundle:node':
+    id: 'entity_bundle:node'
+    bundles:
+      movie: movie
+    negate: false
+    context_mapping:
+      node: '@node.node_route_context:node'
