@@ -30,3 +30,50 @@ function movie_db_form_system_theme_settings_alter(&$form, FormStateInterface $f
     'bg-transparent' => t('Transparent'),
   );
 }
+
+function movie_db_preprocess_menu__main(&$variables){
+  $variables['attributes']['class'][] = 'menu-primary-movie-db';
+}
+
+function movie_db_preprocess_field__node__title__movie_review(&$variables){
+  $uid = \Drupal::currentUser()->id();
+  $node= \Drupal::routeMatch()->getParameter('node');
+  if($node) {
+    $author_id = $node->getOwner()->id();
+    if($uid == $author_id) {
+      $variables['items'][0]['content']['#context']['value'] .= ' - [You are the author]';
+    }
+  }
+}
+
+function movie_db_preprocess_page(&$variables){
+  $variables['current_loggedin_user'] = \Drupal::currentUser()->id();
+  $time=date('H');
+  if($time > 5 && $time < 20){
+    $variables['content_attributes']['class'][] = 'light-mode';
+    $variables['sidebar_first_attributes']['class'][] = 'light-mode';
+  } else {
+    $variables['content_attributes']['class'][] = 'dark-mode';
+    $variables['sidebar_first_attributes']['class'][] = 'dark-mode';    
+  }
+}
+
+function movie_db_js_alter(&$javascript) {
+  if (\Drupal::routeMatch()->getRouteName() == 'entity.node.canonical') {
+    $is_front = \Drupal::service('path.matcher')->isFrontPage();
+    if(!$is_front)  {
+      unset($javascript['themes/custom/movie_db/js/bootstrap.bundle.min.js']);
+      unset($javascript['themes/custom/movie_db/js/tooltip.js']);
+    }
+    unset($javascript['themes/custom/movie_db/js/barrio.js']);
+    unset($javascript['themes/custom/movie_db/js/bootstrap.min.js']);
+    unset($javascript['themes/custom/movie_db/js/custom.js']);
+  }
+}
+
+function movie_db_preprocess_views_view_fields__lists__block_1(&$variables){
+  $variables['fields']['title']->element_attributes['data-bs-toggle'] = 'tooltip';
+  $variables['fields']['title']->element_attributes['data-bs-placement'] = 'bottom';
+  $body= trim(strip_tags($variables['fields']['body']->content));
+  $variables['fields']['title']->element_attributes['title'] = $body;
+}

@@ -1,9 +1,11 @@
 global-styling:
   version: VERSION
   js: 
+    js/bootstrap.bundle.min.js: { weight: -50 }
     js/bootstrap.min.js: { weight: -48 }
     js/barrio.js: {}
     js/custom.js: {}
+    js/tooltip.js: {}
   css:
     component:
       css/style.css: {}

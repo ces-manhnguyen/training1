@@ -1,0 +1,11 @@
+movie_db_trailers.content:
+  path: '/trailers/{node}'
+  defaults:
+    _controller: '\Drupal\movie_db_trailers\Controller\TrailersController::content'
+    _title: 'Trailers Module'
+  requirements: 
+    _permission: 'access content'
+  options:
+    parameters:
+      node:
+        type: entity:node

@@ -13,4 +13,4 @@ permissions:
   - 'delete own movie_review content'
   - 'edit own list content'
   - 'edit own movie_review content'
-  - 'use editorial transition create_new_draft'
+  - 'use review_workflow transition create_new_draft'

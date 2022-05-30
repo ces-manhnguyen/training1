@@ -1,0 +1,6 @@
+name: MovieDB Trailers
+type: module
+description: 'Custom Drupal 9 Module for Movie Trailers.'
+package: Custom
+version: 1.0
+core_version_requirement: ^8 || ^9

@@ -77,14 +77,15 @@ a {
     .block {
         border: 1px solid lightgray;
         border-radius: 5px;
-        background-color: white;
+    }
+    nav ul.nav {
+        margin: 0;
     }
 }
 
 .main-content {
     border: 1px solid lightgray;
     border-radius: 5px;
-    background-color: white;
     padding-top: 10px;
     padding-bottom: 10px;
 }
@@ -92,7 +93,7 @@ a {
 .navbar-brand {
     display: flex;
     align-items: center;
-
+    margin-left: 20px;
     img {
         margin-right: 10px;
     }
@@ -128,6 +129,9 @@ a {
     &:last-child {
         border-top-right-radius: 10px;
     }
+    &+ .list-group-item {
+        border-top-width: 1px;   
+    }
 }
 
 .bg-secondary {
@@ -151,6 +155,7 @@ a {
 }
 
 .movie-links {
+    display: block;
     margin-bottom: 20px;
 }
 
@@ -168,3 +173,36 @@ a {
 //     background-color: black;
 //     border-color: black;
 // }
+
+.light-mode {
+    &.main-content
+    ,&.sidebar .block {
+        background-color: $gray-100;
+    color: $gray-800;
+    }
+}
+
+.dark-mode {
+    &.main-content {
+        background-color: $gray-800;
+        color: $gray-100;
+        .table
+        ,.table-striped > tbody > tr:nth-of-type(odd) > *
+        ,.node--view-mode-teaser a {    
+            color: $gray-100;
+        }
+    }
+    &.sidebar .block {
+        background-color: $gray-800;
+        color: $gray-100;
+    }
+    
+}
+
+.hidden-field {
+    display: none;
+}
+
+.block-views-blocklists-block-1 {
+    margin-bottom: 20px;
+}
