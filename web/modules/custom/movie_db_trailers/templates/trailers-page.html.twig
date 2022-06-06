@@ -1,0 +1,22 @@
+<table class="table table-striped mt-4">
+	<thead class="table-dark">
+		<tr>
+			<th>Title</th>
+			<th>Link</th>
+		</tr>
+	</thead>
+	<tbody>
+		{%- for trailer in trailers -%}
+			<tr>
+				<td>{{ trailer.title }}</td>
+				<td>
+					<a class="use-ajax" 
+						data-dialog-type="modal" 
+						href={{ trailer.link }}>
+						View this trailer
+					</a>
+				</td>
+			</tr>
+		{%- endfor -%}
+	</tbody>
+</table>

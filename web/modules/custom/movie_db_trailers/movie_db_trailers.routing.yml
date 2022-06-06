@@ -9,3 +9,19 @@ movie_db_trailers.content:
     parameters:
       node:
         type: entity:node
+        bundle:
+          - movie
+
+movie_db_trailers.modal:
+  path: '/trailer/{media}'
+  defaults:
+    _controller: '\Drupal\movie_db_trailers\Controller\ModalController::modal'
+    _title: 'Modal'
+  requirements: 
+    _permission: 'access content'
+  options:
+    parameters:
+      media:
+        type: entity:media
+        bundle:
+          - trailer
