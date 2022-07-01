@@ -1,0 +1,5 @@
+name: Cinemas
+type: module
+description: 'Custom Drupal 9 Module for In Cinema System.'
+package: Custom
+core_version_requirement: ^8 || ^9

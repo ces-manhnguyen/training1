@@ -1,0 +1,6 @@
+name: Transcode Profile
+type: module
+description: 'Custom Drupal 9 Module for creating a configuration form exposed to administrators'
+package: Custom
+core_version_requirement: ^8 || ^9
+configure: transcode_profile.form

@@ -1,0 +1,24 @@
+<table class="table table-striped mt-4">
+	<thead class="table-dark">
+		<tr>
+			<th>Title</th>
+			<th>Description</th>
+      <th>Details</th>
+		</tr>
+	</thead>
+	<tbody>
+		{%- for cinema in cinemas -%}
+			<tr>
+				<td>{{ cinema.title }}</td>
+        <td>{{ cinema.description }}</td>
+				<td>
+					<a class="use-ajax" 
+						data-dialog-type="modal" 
+						href={{ "/cinemas/view/#{cinema.id}" }}>
+						View this cinema
+					</a>
+				</td>
+			</tr>
+		{%- endfor -%}
+	</tbody>
+</table>

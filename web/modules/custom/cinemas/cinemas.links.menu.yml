@@ -1,0 +1,5 @@
+cinemas.form:
+  title: 'Settings Form'
+  description: 'Settings for the Cinemas module.'
+  route_name: cinemas.form
+  parent: 'system.admin_config_system'

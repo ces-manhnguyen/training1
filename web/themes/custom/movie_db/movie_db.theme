@@ -12,24 +12,24 @@ use Drupal\Core\Form\FormStateInterface;
  *
  * Replace Barrio setting options with subtheme ones.
  */
-function movie_db_form_system_theme_settings_alter(&$form, FormStateInterface $form_state) {
-  $form['components']['navbar']['bootstrap_barrio_navbar_top_background']['#options'] = array(
-    'bg-primary' => t('Primary'),
-    'bg-secondary' => t('Secondary'),
-    'bg-light' => t('Light'),
-    'bg-dark' => t('Dark'),
-    'bg-white' => t('White'),
-    'bg-transparent' => t('Transparent'),
-  );
-  $form['components']['navbar']['bootstrap_barrio_navbar_background']['#options'] = array(
-    'bg-primary' => t('Primary'),
-    'bg-secondary' => t('Secondary'),
-    'bg-light' => t('Light'),
-    'bg-dark' => t('Dark'),
-    'bg-white' => t('White'),
-    'bg-transparent' => t('Transparent'),
-  );
-}
+// function movie_db_form_system_theme_settings_alter(&$form, FormStateInterface $form_state) {
+//   $form['components']['navbar']['bootstrap_barrio_navbar_top_background']['#options'] = array(
+//     'bg-primary' => t('Primary'),
+//     'bg-secondary' => t('Secondary'),
+//     'bg-light' => t('Light'),
+//     'bg-dark' => t('Dark'),
+//     'bg-white' => t('White'),
+//     'bg-transparent' => t('Transparent'),
+//   );
+//   $form['components']['navbar']['bootstrap_barrio_navbar_background']['#options'] = array(
+//     'bg-primary' => t('Primary'),
+//     'bg-secondary' => t('Secondary'),
+//     'bg-light' => t('Light'),
+//     'bg-dark' => t('Dark'),
+//     'bg-white' => t('White'),
+//     'bg-transparent' => t('Transparent'),
+//   );
+// }
 
 function movie_db_preprocess_menu__main(&$variables) {
   $variables['attributes']['class'][] = 'menu-primary-movie-db';
@@ -82,4 +82,49 @@ function movie_db_preprocess_media_oembed_iframe(array &$variables) {
   $original = $variables["media"]->__toString();
   $original = str_replace('feature=oembed', 'feature=oembed&autoplay=1', $original);
   $variables["media"] = \Drupal\media\IFrameMarkup::create($original);
+}
+
+function movie_db_form_system_theme_settings_alter(&$form, FormStateInterface $form_state, $form_id = NULL) {
+  if (isset($form_id)) {
+    return;
+  }
+  $elements = [
+    'h1' => t('h1'),
+    'h2>a' => t('h2'),
+    'h3' => t('h3'),
+  ];
+  $form['textillate_wrapper'] = [
+    '#type' => 'details',
+    '#title' => t('Textillate Settings'),
+    '#open' => TRUE,
+  ];
+
+  $form['textillate_wrapper']['movie_db_textillate_enable'] = array(
+    '#type' => 'checkbox',
+    '#title' => t('Enable Textillate Animation'),
+    '#default_value' => theme_get_setting('movie_db_textillate_enable'),
+    '#description' => t('Select this to enable the animation of any tags.'),
+  );
+
+  $form['textillate_wrapper']['movie_db_textillate_element'] = array(
+    '#type' => 'select',
+    '#title' => t('Textillate Element'),
+    '#options' => $elements,
+    '#default_value' => theme_get_setting('movie_db_textillate_element'),
+    '#description' => t('Select which element where the style applies'),
+    '#states' => [
+      'visible' => [
+        ':input[name="movie_db_textillate_enable"]' => ['checked' => TRUE],
+      ]
+    ],
+  );
+}
+
+function movie_db_page_attachments_alter(array &$attachments) {
+  $enabled = theme_get_setting('movie_db_textillate_enable');
+  $element = theme_get_setting('movie_db_textillate_element');
+  $attachments['#attached']['drupalSettings']['movie_db']['textillate_settings'] = [
+    'enabled' => $enabled,
+    'element' => $element,
+  ];
 }

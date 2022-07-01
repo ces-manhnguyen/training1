@@ -10,14 +10,14 @@ label: 'Genre URL'
 type: 'canonical_entities:taxonomy_term'
 pattern: 'genre/[term:name]'
 selection_criteria:
-  06107857-3aa2-45f3-b361-508c086a18cc:
+  a5df90b1-5127-41e6-bbd6-48ef7a07ac68:
     id: 'entity_bundle:taxonomy_term'
     bundles:
       genre: genre
     negate: false
     context_mapping:
       taxonomy_term: taxonomy_term
-    uuid: 06107857-3aa2-45f3-b361-508c086a18cc
+    uuid: a5df90b1-5127-41e6-bbd6-48ef7a07ac68
 selection_logic: and
 weight: -5
 relationships: {  }

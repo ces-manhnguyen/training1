@@ -1,0 +1,5 @@
+transcode_profile:
+  profile_name: '1920x1080 h264'
+  enable_transcoding: 1
+_core:
+  default_config_hash: 64xAMRDHiloLXgd_q9uNR12R1AWfa9rHErcwOXvderM

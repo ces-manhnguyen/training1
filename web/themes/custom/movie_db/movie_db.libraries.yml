@@ -13,3 +13,32 @@ global-styling:
     - core/jquery
     - core/drupal
     - core/popperjs
+
+textillate-init:
+  js:
+    js/textillate-init.js: {}
+  dependencies:
+  - core/drupalSettings
+  - movie_db/lettering
+  - movie_db/textillate
+  - core/once
+
+lettering:
+  remote: https://letteringjs.com/
+  version: 0.7.0
+  license:
+    name: MIT
+    url: https://github.com/davatron5000/Lettering.js/blob/master/README.md
+    gpl-compatible: true
+  js:
+    //cdnjs.cloudflare.com/ajax/libs/lettering.js/0.7.0/jquery.lettering.min.js: { type: external, minified: true }
+
+textillate:
+  remote: https://github.com/jschr/textillate
+  verstion: 0.4.0
+  license:
+    name: MIT
+    url: https://github.com/jschr/textillate/blob/master/LICENSE
+    gpl-compatible: true
+  js:
+    //cdnjs.cloudflare.com/ajax/libs/textillate/0.4.0/jquery.textillate.min.js: { type: external, minified: true }

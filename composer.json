@@ -16,6 +16,7 @@
     ],
     "require": {
         "composer/installers": "^1.9",
+        "cweagans/composer-patches": "^1.7",
         "drupal/admin_toolbar": "^3.0.0",
         "drupal/bootstrap_barrio": "^5.5",
         "drupal/bootstrap_sass": "^5.0",
@@ -27,6 +28,7 @@
         "drupal/environment_indicator": "^4.0.0",
         "drupal/imageapi_optimize": "^4.0.0",
         "drupal/imageapi_optimize_binaries": "^1.0@alpha",
+        "drupal/leaflet": "^2.2",
         "drupal/search_api_solr": "^4.2",
         "drush/drush": "^10.0.0"
     },

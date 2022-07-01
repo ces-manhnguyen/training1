@@ -1,0 +1,3 @@
+transcode_profile:
+  profile_name: '1920x1080 h264'
+  enable_transcoding: 1

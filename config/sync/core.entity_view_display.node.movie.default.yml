@@ -16,6 +16,7 @@ dependencies:
     - views.view.movie_carousel
     - views.view.movie_tags
   module:
+    - cinemas
     - fivestar
     - layout_builder
     - layout_discovery
@@ -25,8 +26,8 @@ dependencies:
     - views
 third_party_settings:
   layout_builder:
-    allow_custom: true
     enabled: true
+    allow_custom: true
     sections:
       -
         layout_id: layout_onecol
@@ -37,38 +38,41 @@ third_party_settings:
             uuid: 00d77853-9455-4553-962b-d32528ee1f3a
             region: content
             configuration:
+              id: 'extra_field_block:node:movie:links'
               label_display: '0'
               context_mapping:
                 entity: layout_builder.entity
-              id: 'extra_field_block:node:movie:links'
-            additional: {  }
             weight: 0
+            additional: {  }
           8a76c812-7347-4588-b76c-8fc4555dbd3c:
             uuid: 8a76c812-7347-4588-b76c-8fc4555dbd3c
             region: content
             configuration:
+              id: 'field_block:node:movie:body'
               label_display: '0'
               context_mapping:
                 entity: layout_builder.entity
-              id: 'field_block:node:movie:body'
               formatter:
-                label: hidden
                 type: text_default
+                label: hidden
                 settings: {  }
                 third_party_settings: {  }
-            additional: {  }
             weight: 2
+            additional: {  }
           b615e086-93f2-4f52-989f-0e1f343a64f5:
             uuid: b615e086-93f2-4f52-989f-0e1f343a64f5
             region: content
             configuration:
               id: 'field_block:node:movie:field_link_to_imdb_netflix_amazo'
               label: 'Link to IMDB, Netflix, Amazon Prime etc.'
-              provider: layout_builder
               label_display: visible
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
               formatter:
-                label: hidden
                 type: link
+                label: hidden
                 settings:
                   trim_length: 80
                   url_only: false
@@ -76,64 +80,42 @@ third_party_settings:
                   rel: '0'
                   target: '0'
                 third_party_settings: {  }
-              context_mapping:
-                entity: layout_builder.entity
-                view_mode: view_mode
-            additional: {  }
-            weight: 7
-          bc23add2-4fb3-4faa-96b5-77f4a8bd6157:
-            uuid: bc23add2-4fb3-4faa-96b5-77f4a8bd6157
-            region: content
-            configuration:
-              id: 'field_block:node:movie:field_trailers'
-              label: Trailers
-              provider: layout_builder
-              label_display: visible
-              formatter:
-                label: hidden
-                type: entity_reference_entity_view
-                settings:
-                  view_mode: default
-                third_party_settings: {  }
-              context_mapping:
-                entity: layout_builder.entity
-                view_mode: view_mode
-            additional: {  }
             weight: 8
+            additional: {  }
           7e3add48-3919-40b8-88b0-71f3f6515d34:
             uuid: 7e3add48-3919-40b8-88b0-71f3f6515d34
             region: content
             configuration:
               id: 'views_block:movie_tags-block_2'
               label: ''
-              provider: views
               label_display: visible
+              provider: views
+              context_mapping: {  }
               views_label: ''
               items_per_page: none
-              context_mapping: {  }
-            additional: {  }
             weight: 4
+            additional: {  }
           3b384932-2cef-4d90-9eea-0b9e696d46b2:
             uuid: 3b384932-2cef-4d90-9eea-0b9e696d46b2
             region: content
             configuration:
               id: 'views_block:movie_tags-block_1'
               label: ''
-              provider: views
               label_display: visible
+              provider: views
+              context_mapping: {  }
               views_label: ''
               items_per_page: '40'
-              context_mapping: {  }
+            weight: 10
             additional: {  }
-            weight: 9
           e3f6017f-4614-4d58-8d5e-854cd2f286e6:
             uuid: e3f6017f-4614-4d58-8d5e-854cd2f286e6
             region: content
             configuration:
+              id: 'field_block:node:movie:field_movie_image'
               label_display: '0'
               context_mapping:
                 entity: layout_builder.entity
-              id: 'field_block:node:movie:field_movie_image'
               formatter:
                 type: entity_reference_entity_view
                 label: hidden
@@ -141,58 +123,82 @@ third_party_settings:
                   view_mode: default
                   link: false
                 third_party_settings: {  }
-            additional: {  }
             weight: 1
+            additional: {  }
           55acefee-e2c9-4bfa-af4f-a4e7f5599d8c:
             uuid: 55acefee-e2c9-4bfa-af4f-a4e7f5599d8c
             region: content
             configuration:
+              id: 'field_block:node:movie:field_movie_rating'
               label_display: '0'
               context_mapping:
                 entity: layout_builder.entity
-              id: 'field_block:node:movie:field_movie_rating'
               formatter:
+                type: fivestar_stars
                 label: above
                 settings:
                   text_format: average
                   display_format: average
                   fivestar_widget: basic
                 third_party_settings: {  }
-                type: fivestar_stars
-            additional: {  }
             weight: 3
+            additional: {  }
           5e3d3af8-120c-4a1b-a3c2-aaa7df5d5396:
             uuid: 5e3d3af8-120c-4a1b-a3c2-aaa7df5d5396
             region: content
             configuration:
               id: 'views_block:movie_carousel-block_1'
               label: 'Similar Movies'
-              provider: views
               label_display: visible
+              provider: views
+              context_mapping: {  }
               views_label: 'Similar Movies'
               items_per_page: none
-              context_mapping: {  }
+            weight: 11
             additional: {  }
-            weight: 10
           1884f298-185d-431f-8aef-ea94c58852a1:
             uuid: 1884f298-185d-431f-8aef-ea94c58852a1
             region: content
             configuration:
               id: 'field_block:node:movie:field_cast'
               label: Cast
-              provider: layout_builder
               label_display: visible
-              formatter:
-                label: hidden
-                type: entity_reference_revisions_entity_view
-                settings:
-                  view_mode: default
-                third_party_settings: {  }
+              provider: layout_builder
               context_mapping:
                 entity: layout_builder.entity
                 view_mode: view_mode
+              formatter:
+                type: entity_reference_revisions_entity_view
+                label: hidden
+                settings:
+                  view_mode: default
+                third_party_settings: {  }
+            weight: 7
             additional: {  }
+          dbdcb3ef-2961-4b28-91be-3af3679190f4:
+            uuid: dbdcb3ef-2961-4b28-91be-3af3679190f4
+            region: content
+            configuration:
+              id: 'views_block:movie_tags-block_3'
+              label: ''
+              label_display: visible
+              provider: views
+              context_mapping: {  }
+              views_label: ''
+              items_per_page: none
+            weight: 9
+            additional: {  }
+          a1b877ef-9779-41f0-b274-695f0d350f76:
+            uuid: a1b877ef-9779-41f0-b274-695f0d350f76
+            region: content
+            configuration:
+              id: cinemas_block
+              label: 'Cinemas block'
+              label_display: visible
+              provider: cinemas
+              context_mapping: {  }
             weight: 6
+            additional: {  }
         third_party_settings: {  }
 id: node.movie.default
 targetEntityType: node
@@ -200,22 +206,22 @@ bundle: movie
 mode: default
 content:
   body:
-    label: hidden
     type: text_default
-    weight: 1
+    label: hidden
     settings: {  }
     third_party_settings: {  }
+    weight: 1
     region: content
   field_cast_paragraph:
-    weight: 8
+    type: entity_reference_label
     label: above
     settings:
       link: true
     third_party_settings: {  }
-    type: entity_reference_label
+    weight: 8
     region: content
   field_link_to_imdb_netflix_amazo:
-    weight: 4
+    type: link
     label: above
     settings:
       trim_length: 80
@@ -224,57 +230,57 @@ content:
       rel: ''
       target: ''
     third_party_settings: {  }
-    type: link
+    weight: 4
     region: content
   field_movie_image:
     type: entity_reference_entity_view
-    weight: 2
     label: hidden
     settings:
       view_mode: default
       link: false
     third_party_settings: {  }
+    weight: 2
     region: content
   field_movie_rating:
-    weight: 5
+    type: fivestar_stars
     label: above
     settings:
       text_format: average
       display_format: average
       fivestar_widget: basic
     third_party_settings: {  }
-    type: fivestar_stars
+    weight: 5
     region: content
   field_review_genre:
-    weight: 3
+    type: entity_reference_label
     label: above
     settings:
       link: true
     third_party_settings: {  }
-    type: entity_reference_label
+    weight: 3
     region: content
   field_tags:
-    weight: 7
+    type: entity_reference_label
     label: above
     settings:
       link: true
     third_party_settings: {  }
-    type: entity_reference_label
+    weight: 7
     region: content
   field_trailers:
     type: entity_reference_entity_view
-    weight: 6
     label: above
     settings:
       view_mode: default
       link: false
     third_party_settings: {  }
+    weight: 6
     region: content
   links:
-    weight: 0
-    region: content
     settings: {  }
     third_party_settings: {  }
+    weight: 0
+    region: content
 hidden:
   field_cast: true
   langcode: true

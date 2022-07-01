@@ -1,0 +1,29 @@
+cinemas.content:
+  path: '/cinemas/{node}'
+  defaults:
+    _controller: '\Drupal\cinemas\Controller\CinemasController::content'
+    _title: 'Cinemas Module'
+  requirements: 
+    _permission: 'access content'
+  options:
+    parameters:
+      node:
+        type: entity:node
+        bundle:
+          - movie
+
+cinemas.modal:
+  path: '/cinemas/view/{id}'
+  defaults:
+    _controller: '\Drupal\cinemas\Controller\ModalController::modal'
+    _title: 'Modal'
+  requirements: 
+    _permission: 'access content'
+
+cinemas.form:
+  path: 'admin/config/system/cinemas/settings'
+  defaults:
+    _form: '\Drupal\cinemas\Form\SettingsForm'
+    _title: 'Settings Form'
+  requirements: 
+    _permission: 'administer site configuration'

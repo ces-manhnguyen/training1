@@ -1,0 +1,5 @@
+cinemas:
+  url: 'https://de4e8a15-72cf-44f7-b4f2-ef9a5aded995.mock.pstmn.io'
+  api_key: test
+  api_secret: testpassword
+  key_select: token
